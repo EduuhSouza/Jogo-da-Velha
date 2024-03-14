@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: fonte1;
+    src: url(fontes/Avilock\ Bold.ttf);
+}
+
+@font-face {
+    font-family: fonte2;
+    src: url(fontes/Designer.otf);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(https://windowscustomization.com/wp-content/uploads/2018/11/cyberpunk-girl-1.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* h1{
+    text-align: center;
+    font-family: fonte2;
+    font-size: 2em;
+    color: aliceblue;
+    transition: 1s;
+} */
+
+.neon{
+    font-weight: 400;
+    font-size: 3.4em;
+    text-align: center;
+    font-family: fonte2;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.575);
+    text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #ffffff,
+    0 0 40px rgb(0, 0, 0),
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px rgb(0, 26, 255),
+    0 0 150px rgb(0, 0, 0);
+
+}
+
+/* -----------ANIMAÇÃO texto------------- */
+
+.neon span{
+    animation: flicker 3s linear ;
+    
+}
+
+.neon:hover{
+    animation: flicker 500ms linear ;
+    cursor: pointer;
+}
+
+.neon .delay1{
+    animation-delay: 0.8s;
+}
+
+.neon .delay2{
+    animation-delay: 1.4s;
+}
+
+.neon .delay3{
+    animation-delay: 1.8s;
+}
+
+@keyframes flicker {
+
+    0% { opacity: 0;}
+    10%{ opacity: 1;}
+    20%{ opacity: 0;}
+    40%{ opacity: 1;}
+    50%{ opacity: 0;}
+    60%{ opacity: 1;}
+    80%{opacity: 0;}
+    100%{opacity: 1;}
+    
+    
+}
+
+
+/* -----------jogo da velha ---------------- */
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 140px);
+    grid-template-rows: repeat(3, 140px);
+    /* gap: 2px; */
+    color: rgb(255, 255, 255);
+    text-shadow: 0 2px 10px rgb(255, 230, 0);
+
+
+}
+
+/*----------------- célula --------------*/
+.cell{
+    border: 3px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    cursor: pointer;
+    font-family: fonte2;
+    box-shadow: 0 0 30px rgba(6, 223, 252, 0.5);
+    transition: .5s ;
+}
+
+.cell:hover{
+    box-shadow: 0 0 40px rgb(255, 255, 255);
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7){
+    border-left: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9){
+    border-right: none;
+}
+
+/* ---------------RODAPÉ----------- */
+
+footer{
+    margin-top: 4em;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    font-family: fonte2;
+    box-shadow:
+    0 0 20px aqua,
+    0 0 20px rgb(247, 0, 255);
+    padding: 1.5em;
+    transition: 1.5s;
+    border-radius: 10px;
+
+}
+
+footer:hover{
+    box-shadow: 0 0 50px
+    0 0 20px aqua,
+    0 0 20px rgb(247, 0, 255) ;
+    background-color: rgb(0, 204, 255);
+    border-radius: 1em;
+    color: black;
+
+}
+
+
+
+/* -------------CELUALR----------- */
+@media (max-width: 760px) {
+    body{
+        background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0f98aa8d-f582-4aee-a91e-a7e6c6a6efaa/dg0wbi9-13589c6a-52bc-472e-b893-4edfdada7ddc.png/v1/fill/w_1194,h_669,q_70,strp/cyberpunk_girl_wallpaper_free_download__3_by_vilescythe94_dg0wbi9-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzE4IiwicGF0aCI6IlwvZlwvMGY5OGFhOGQtZjU4Mi00YWVlLWE5MWUtYTdlNmM2YTZlZmFhXC9kZzB3Ymk5LTEzNTg5YzZhLTUyYmMtNDcyZS1iODkzLTRlZGZkYWRhN2RkYy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ig_K6o3YZUVytaDFW53qBu31QrwbRfXc49HNb2JhiCI);
+        background-position: 50%;
+    }
+    
+    .board{
+        display: grid;
+        grid-template-columns: repeat(3, 120px);
+        grid-template-rows: repeat(3, 120px);
+    }
+
+    .cell{
+        border: 2px solid rgb(255, 255, 255);
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <link rel="shortcut icon" href="https://media.istockphoto.com/id/1299481774/pt/vetorial/glowing-neon-line-tic-tac-toe-game-icon-isolated-on-black-background-vector.jpg?s=612x612&w=0&k=20&c=eg1fxwb4k0Hrv8Xctg6mTBYvJY3qhmdY4u50Pu63QIM=">
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Jogo da velha</title>
+</head>
+<body>
+
+    <h1 class="neon">
+        Jo<span class="delay1">g</span>o 
+        d<span>a</span> 
+        V<span>e</span>lha
+
+    </h1>
+
+    <div class="board" id="board" data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500">
+        <div class="cell" onclick="cellClicked(0)"></div>
+        <div class="cell" onclick="cellClicked(1)"></div>
+        <div class="cell" onclick="cellClicked(2)"></div>
+        <div class="cell" onclick="cellClicked(3)"></div>
+        <div class="cell" onclick="cellClicked(4)"></div>
+        <div class="cell" onclick="cellClicked(5)"></div>
+        <div class="cell" onclick="cellClicked(6)"></div>
+        <div class="cell" onclick="cellClicked(7)"></div>
+        <div class="cell" onclick="cellClicked(8)"></div>
+    </div>
+
+    <script>
+        let currentPlayer = 'X';
+        let board = ['', '', '', '', '', '', '', '', ''];
+
+        function cellClicked(index) {
+            if (board[index] === '') {
+                board[index] = currentPlayer;
+                document.getElementById('board').children[index].innerText = currentPlayer;
+                checkWinner();
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            }
+        }
+
+        function checkWinner(){
+            const winConditions = [
+                [0, 1, 2], [3, 4 ,5], [6, 7 ,8],
+                [0, 3 ,6], [1, 4 ,7], [2, 5, 8],
+                [0, 4 ,8], [2, 4, 6]
+            ];
+
+            for (let condition of winConditions){
+                const [a, b, c] = condition;
+                if (board[a] !== '' && board[a] === board[b] && board[a] === board[c]){
+                    alert(`JOGADOR  ${board[a]} VENCEU!`);
+                 
+                
+                    resetBoard();
+                    return;
+
+                }
+            }
+
+            if (!board.includes('')){
+                alert('Empate');
+                resetBoard();
+            }
+
+        } 
+
+        function resetBoard(){
+            currentPlayer = 'X';
+            board = ['', '', '', '', '', '', '', '', ''];
+            for (let i = 0; i < 9; i++){
+                document.getElementById('board').children[i].innerText = '';
+            }
+        }
+
+
+    </script>
+    
+
+    <footer>
+        Desenvolvido por Eduarda Souza &real; | Março de 2024 Progamação Web IOS
+    </footer>
+
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
