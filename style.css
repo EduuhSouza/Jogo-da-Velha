@@ -16,12 +16,55 @@ body{
     justify-content: center;
     align-items: center;
 
-    background-image: url(https://windowscustomization.com/wp-content/uploads/2018/11/cyberpunk-girl-1.gif);
+    background-image: url(https://i.pinimg.com/originals/27/35/36/27353667415c14579ccf97cc47ce9b5d.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
+    transition: all .5s ease-in-out;
+
 }
 
+
+img{
+    width: 15%;
+    border-radius: 10%;
+}
+
+button img{
+    width: 3em;
+    /* height: 2em; */
+}
+
+/* DARK MODE------------ */
+
+.dark-mode{
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d3139093-f1c4-4621-b7bc-30aeeff7178a/dcdx4ew-1a8fda2d-5092-4759-a98b-ed39c56bc2a8.png/v1/fill/w_1192,h_670,q_70,strp/cyberpunk_2077___4k_wallpaper_2018___game_info__by_nurboyxvi_dcdx4ew-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTAwIiwicGF0aCI6IlwvZlwvZDMxMzkwOTMtZjFjNC00NjIxLWI3YmMtMzBhZWVmZjcxNzhhXC9kY2R4NGV3LTFhOGZkYTJkLTUwOTItNDc1OS1hOThiLWVkMzljNTZiYzJhOC5wbmciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.JQK1KYaKeOcP9ZgfbnIN0jiFyMtDZdpfhy6fkJHktVw);
+}
+
+.dark-mode .neon{
+    text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #ffffff,
+    0 0 40px rgb(0, 0, 0),
+    0 0 80px rgb(0, 59, 59),
+    0 0 90px rgb(0, 109, 109),
+    0 0 100px rgb(0, 5, 46),
+    0 0 150px rgb(0, 0, 0);
+    color: black;
+}
+
+.dark-mode .board{
+    color: rgb(0, 0, 0);
+    text-shadow: 0 2px 10px rgb(0, 255, 221);
+
+}
+
+.dark-mode .cell{
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.76);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.76);
+
+}
 /* h1{
     text-align: center;
     font-family: fonte2;

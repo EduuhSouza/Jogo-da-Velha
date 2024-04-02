@@ -21,6 +21,8 @@
         d<span>a</span> 
         V<span>e</span>lha
 
+        <button id="toggle-mode"> 
+            <img src="https://static.vecteezy.com/system/resources/previews/000/627/925/original/vector-sun-icon-symbol-sign.jpg" alt=""> </button>
     </h1>
 
     <div class="board" id="board" data-aos="fade-down"
@@ -85,6 +87,14 @@
         }
 
 
+        // DARK mode------
+
+        const toggleBtn = document.getElementById('toggle-mode');
+        const body = document.body;
+
+        toggleBtn.addEventListener("click", function(){
+            body.classList.toggle("dark-mode")
+        })
     </script>
     
 
