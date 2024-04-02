@@ -30,7 +30,7 @@ img{
     border-radius: 10%;
 }
 
-button img{
+#toggle-mode img{
     width: 15%;
     /* height: 2em; */
 }
